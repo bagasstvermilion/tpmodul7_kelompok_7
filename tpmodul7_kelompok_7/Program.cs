@@ -1,2 +1,27 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+namespace tpmodul7_kelompok_7
+{
+    public class Program
+    {
+        public static void ReadJSON()
+        {
+            string path = @"../../../tp7_1_103022300035.json";
+            string jsonString = File.ReadAllText(path);
+
+            var data = JsonSerializer.Deserialize<DataMahasiswa103022300035>(jsonString);
+
+            Console.WriteLine($"Nama {data.nama.depan} {data.nama.belakang} dengan nim {data.nim} dari fakultas {data.fakultas}");
+
+        }
+        public static void Main(string[] args)
+        {
+            ReadJSON();
+        }
+    }
+}
