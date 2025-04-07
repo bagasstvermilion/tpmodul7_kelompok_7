@@ -13,12 +13,24 @@ namespace tpmodul7_kelompok_7
 
         public static void ReadJSONDataMhs()
         {
+            string path = @"../../../tp7_1_103022300011.json";
+            string jsonString = File.ReadAllText(path);
+
+            var data = JsonSerializer.Deserialize<DataMahasiswa103022300011>(jsonString);
+
             string path = @"../../../tp7_1_103022300021.json";
             string jsonString = File.ReadAllText(path);
 
             var data = JsonSerializer.Deserialize<DataMahasiswa103022300021>(jsonString);
             Console.WriteLine($"Nama {data.nama.depan} {data.nama.belakang} dengan nim {data.nim} dari fakultas {data.fakultas}");
         }
+      
+        public static void ReadJSONKuliahMhs()
+        {
+            string path = @"../../../tp7_2_103022300011.json";
+            string jsonString = File.ReadAllText(path);
+
+            var dataList = JsonSerializer.Deserialize<KuliahMahasiswa103022300011>(jsonString);
 
 
         
@@ -37,7 +49,6 @@ namespace tpmodul7_kelompok_7
                 i++;
             }
         }
-
 
         public static void Main(string[] args)
         {
