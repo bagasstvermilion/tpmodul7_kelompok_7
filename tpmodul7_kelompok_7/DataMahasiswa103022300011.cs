@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace tpmodul7_kelompok_7
 {
-    class DataMahasiswa103022300035
+    class DataMahasiswa103022300011
     {
         public Nama nama { get; set; }
         public long nim { get; set; }
